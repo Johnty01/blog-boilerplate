@@ -9,11 +9,14 @@ app.use(bodyParser.json())
 const commentsByPostID = {}
 
 app.get('/posts/:id/comments', (req,res)=>{
-
+    res.send(commentsByPostID[req.params.id] || [])
 })
 
 app.post('/posts/:id/comments', (req,res)=>{
  const commentID = randomBytes(4).toString('hex')
+
+
+
  const content = req.body
 
  const comments = commentsByPostID[req.params.id] || []
