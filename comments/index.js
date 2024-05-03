@@ -45,6 +45,6 @@ app.post('/events', (req, res) => {
     res.send({})//good to go, empty response
 })
 
-app.listen(4002, () => {
-    console.log('Listening on port 4002')
+app.listen(4001, () => {
+    console.log('Listening on port 4001')
 })
