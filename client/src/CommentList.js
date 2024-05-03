@@ -2,7 +2,6 @@ import React from "react"
 
 export default ({ comments }) =>{
    
-    console.log(postId, ": ",comments)
     const renderedComments = comments.map((comment)=>{
         return <li key={comment.id}>{comment.content}</li>
     })
