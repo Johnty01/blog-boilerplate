@@ -8,7 +8,7 @@ export default () =>{
 
     const fetchPosts = async () => {
         const res = await axios.get('http://localhost:4002/posts/')
-
+        console.log(res)
         setPosts(res.data)
     }
     //useEffect can be used at a very specific points in time in the life cycle of a component
@@ -27,8 +27,8 @@ export default () =>{
         >
             <div className = 'card-body'>
                 <h3>{post.title}</h3>
-                //<CommentList comments={post.comments} />
-                //<CommentCreate postId={post.id}/>
+                <CommentList comments={post.comments} />
+                <CommentCreate postId={post.id}/>
             </div>
         </div>
         )
