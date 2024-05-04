@@ -7,6 +7,8 @@ export default ()=>{
         event.preventDefault()
         await axios.post('http://localhost:4000/posts/',{
             title // dont u dare put extra , like golang here, otherwise this piece of shit takes it as an array here 
+        }).catch(err => {
+            console.log(err.message)
         })
         setTitle('')
     }

@@ -7,7 +7,9 @@ export default () =>{
     const [posts, setPosts] = useState({}) // it is an array in server for the api resp
 
     const fetchPosts = async () => {
-        const res = await axios.get('http://localhost:4002/posts/')
+        const res = await axios.get('http://localhost:4002/posts/').catch(err => {
+            console.log(err.message)
+        })
         console.log(res)
         setPosts(res.data)
     }
