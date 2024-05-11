@@ -11,3 +11,6 @@ kubectl get deployments
 kubectl describe deployment {deploymentName}
 kubectl delete deployment {deploymentName}
 ###### when you delete the deployment all the relevant pods are also deleted
+
+# how to update the latest deployment
+kubectl rollout deployment 'deployment-name' #very useful when docker image is updated
