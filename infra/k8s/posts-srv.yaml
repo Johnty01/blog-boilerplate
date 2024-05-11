@@ -1,0 +1,13 @@
+apiVersion: v1 
+kind: Service
+metadata:
+  name: posts-srv
+spec:
+  type: NodePort
+  selector: # the usage of selector is to provide the information about which ports you need to expose outside world in this node port service
+    app: posts
+  ports:
+  - name: posts 
+    protocol: TCP
+    port: 4000 # this exposes port from Node Port Service to outside of Node
+    targetPort: 4000 #this exposes port from pod to Node Port Service, this is going to be same as the port specified in our application
